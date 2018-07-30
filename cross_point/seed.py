@@ -1,6 +1,8 @@
 import numpy as np
 np.set_printoptions(linewidth=300)
 
+np.random.seed(42)
+
 IMG_HEIGHT = 28
 IMG_WIDTH  = 28
 RADIUS = 5
@@ -13,7 +15,7 @@ def create_data(n):
         y = np.random.randint(0, IMG_HEIGHT)
         X.append(create_x(x, y, RADIUS))
         Y.append(create_y(x, y))
-        if i % 500 == 0:
+        if i % 1000 == 0:
             print('create %d data' % i)
 
     X = np.array(X)
@@ -25,11 +27,17 @@ def create_x(x, y, radius):
     data = np.ones((IMG_HEIGHT, IMG_WIDTH), 'uint8') * 255
     # 1. horizontal line
     start = max(x - radius, 0)
-    data[y, start:x + radius + 1] = np.random.randint(0, 50)
+    end = min(x + radius + 1, IMG_WIDTH)
+
+    for v in range(start, end):
+        data[y, v] = np.random.randint(0, 50)
 
     # 2. vertical line
     start = max(y - radius, 0)
-    data[y - start:y + radius + 1, x] = np.random.randint(0, 50)
+    end = min(y + radius + 1, IMG_HEIGHT)
+
+    for v in range(start, end):
+        data[v, x] = np.random.randint(0, 50)
 
     # print(data)
     return data

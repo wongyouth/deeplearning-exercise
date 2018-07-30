@@ -26,12 +26,15 @@ model = Sequential([
 ])
 
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-# print(model.summary())
+print("\nNetwork:")
+print(model.summary())
 
+# x_train, y_train, x_test, y_test = seed.load_data('data.npz')
+x_train, y_train = seed.create_data(50000)
+x_test, y_test = seed.create_data(10000)
 
-x_train, y_train, x_test, y_test = seed.load_data('data.npz')
-# x_train, y_train = seed.create_data(5000)
-# x_test, y_test = seed.create_data(1000)
+print("\nData example:")
+print(x_train[0])
 
 x_train = x_train.reshape((-1, 28, 28, 1)).astype('float32')
 x_test = x_test.reshape((-1, 28, 28, 1)).astype('float32')
@@ -42,6 +45,7 @@ x_test /= 255.0
 y_train = keras.utils.to_categorical(y_train, size)
 y_test = keras.utils.to_categorical(y_test, size)
 
+print("\Start training...")
 tensorboard = TensorBoard(log_dir='./logs/{}'.format(time.time()))
 model.fit(x_train, y_train, batch_size=200, epochs=5, validation_data=(x_test, y_test), callbacks=[tensorboard])
 
