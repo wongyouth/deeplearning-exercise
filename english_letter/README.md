@@ -25,7 +25,7 @@ The original image is like:
 
 ![orginal letter](img.png)
 
-So it need to be flipped and rotate 90° clockwise, turns to:
+So it needs to be flipped horizontally and rotate 90° anticlockwise, turns to:
 
 ![rotate 90](img2.png)
 
