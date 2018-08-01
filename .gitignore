@@ -1,0 +1,7 @@
+logs/
+_*
+*.h5
+*.npz
+.*/
+*.zip
+data/
