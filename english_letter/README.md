@@ -59,7 +59,7 @@ Trainable params: 1,627,930
 Non-trainable params: 0
 _________________________________________________________________
 
-</ore>
+</pre>
 
 ## Data Sample
 
