@@ -17,10 +17,10 @@ model = Sequential([
     # GaussianNoise(.2),
     Conv2D(64, (3, 3), activation='relu', padding='same'),
     MaxPooling2D(),
-    Conv2D(128, (3, 3), activation='relu'),
-    MaxPooling2D(),
-    Conv2D(256, (3, 3), activation='relu'),
-    MaxPooling2D(),
+    # Conv2D(128, (3, 3), activation='relu'),
+    # MaxPooling2D(),
+    # Conv2D(256, (3, 3), activation='relu'),
+    # MaxPooling2D(),
     Dropout(0.2),
     Flatten(),
     Dense(128, activation='relu'),
@@ -28,8 +28,7 @@ model = Sequential([
     Dense(num_class, activation='softmax'),
 ])
 
-adam = keras.optimizers.Adam(decay=1e-6)
-model.compile(loss='categorical_crossentropy', optimizer=adam, metrics=['accuracy'])
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 print("\nNetwork:")
 print(model.summary())
 
