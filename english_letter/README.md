@@ -142,4 +142,4 @@ Test accuracy: 0.9361538461538461
 - Add more network
 - Tuning adam parameters
 
-But I am pleasure of it as ian exercise.
+As just an exercise, I am satisfied of it.
