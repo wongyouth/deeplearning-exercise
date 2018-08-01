@@ -45,7 +45,7 @@ x_test /= 255.0
 y_train = keras.utils.to_categorical(y_train, size)
 y_test = keras.utils.to_categorical(y_test, size)
 
-print("\Start training...")
+print("\nStart training...")
 tensorboard = TensorBoard(log_dir='./logs/{}'.format(time.time()))
 model.fit(x_train, y_train, batch_size=200, epochs=5, validation_data=(x_test, y_test), callbacks=[tensorboard])
 
