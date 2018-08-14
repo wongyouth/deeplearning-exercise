@@ -28,7 +28,8 @@ model = Sequential([
     Dense(num_class, activation='softmax'),
 ])
 
-model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+adam = keras.optimizers.Adam(lr=0.001, decay=1e-6)
+model.compile(loss='categorical_crossentropy', optimizer=adam, metrics=['accuracy'])
 print("\nNetwork:")
 print(model.summary())
 
