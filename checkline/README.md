@@ -1,3 +1,10 @@
+# Optical mark recognition
+
+![](./ok.png)
+![](./ng.png)
+
+# Usage
+
 ## Generate model
 
     pip install -r requirements.txt
