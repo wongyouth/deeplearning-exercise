@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev": "vue serve web.vue"
+  },
+  "dependencies": {
+    "keras-js": "^1.0.3",
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "@vue/cli-service-global": "^3.0.1"
+  }
+}
